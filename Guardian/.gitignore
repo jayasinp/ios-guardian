@@ -1,0 +1,74 @@
+# User-specific files
+*.xcuserdata
+*.xcuserstate
+
+# Build artifacts
+build/
+*.pbxuser
+!default.mode1v3
+!default.mode2v3
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+
+# Index files
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Xcode generated files
+*.xcworkspace
+xcuserdata/
+
+# CocoaPods
+Pods/
+Podfile.lock
+
+# Carthage
+Carthage/Build/
+
+# Swift Package Manager
+/.build/
+/Packages/
+/package.pins
+Package.resolved
+.swiftpm
+
+# Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+fastlane/*.log
+
+# Provisioning Profiles
+*.mobileprovision
+*.provisionprofile
+
+# Symbolicate crash reports
+*.crash
+*.xcactivitylog
+*.moved-aside
+*.xcassets
+
+# Derived Data
+DerivedData/
+.idea/
+
+# App Icon
+AppIcon.appiconset/
+
+# Other
+*.orig
+*.DS_Store
+*.swp
+*.lock
+
+# Swift Package Manager
+.swiftpm/
+.build/
