@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var isLoggedIn: Bool = false  // This state will determine if user is logged in
+    
     var body: some View {
-        HomeView()  // Set HomeView as the main view
+        if isLoggedIn {
+            HomeView()  // Show the main app if logged in
+        } else {
+            OnboardingView(isLoggedIn: $isLoggedIn)  // Show onboarding if not logged in
+        }
     }
 }
 
