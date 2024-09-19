@@ -21,26 +21,27 @@ struct OnboardingView: View {
                         .font(.largeTitle)
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)
+                        .foregroundColor(Color.primary) // Automatically adjusts based on theme
                     
                     Text("You are one step closer to peace of mind!")
                         .font(.body)
-                        .foregroundColor(.gray)
+                        .foregroundColor(Color.secondary)
                         .multilineTextAlignment(.center)
                         .padding(.top, 5)
                 }
                 
                 Spacer()
                 
-                // Navigation buttons
+                // Navigation buttons with adaptive background colors
                 VStack(spacing: 20) {
                     NavigationLink(destination: LoginView(isLoggedIn: $isLoggedIn)) {  // Pass isLoggedIn to LoginView
                         Text("Login")
                             .font(.headline)
                             .padding()
                             .frame(maxWidth: .infinity)
-                            .background(Color.black)
+                            .background(Color(.systemBlue))
                             .foregroundColor(.white)
-                            .cornerRadius(30)
+                            .cornerRadius(10)
                             .padding(.horizontal, 20)
                     }
                     
@@ -49,9 +50,9 @@ struct OnboardingView: View {
                             .font(.headline)
                             .padding()
                             .frame(maxWidth: .infinity)
-                            .background(Color.gray.opacity(0.2))
-                            .foregroundColor(.black)
-                            .cornerRadius(30)
+                            .background(Color(.systemGray4))
+                            .foregroundColor(Color.primary)
+                            .cornerRadius(10)
                             .padding(.horizontal, 20)
                     }
                 }

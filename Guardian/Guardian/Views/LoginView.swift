@@ -12,6 +12,7 @@ struct LoginView: View {
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var showPassword: Bool = false
+    @State private var showForgotPasswordModal: Bool = false // State to show password reset modal
     
     var body: some View {
         VStack(spacing: 20) {
@@ -32,7 +33,7 @@ struct LoginView: View {
             }
             .padding()
             .background(Color(.secondarySystemBackground))
-            .cornerRadius(25)
+            .cornerRadius(10)
             
             // Password Field with Eye Icon
             HStack {
@@ -53,17 +54,20 @@ struct LoginView: View {
             }
             .padding()
             .background(Color(.secondarySystemBackground))
-            .cornerRadius(25)
+            .cornerRadius(10)
             
             // Forgot Password Link
             HStack {
                 Spacer()
                 Button(action: {
-                    // Forgot password action
+                    showForgotPasswordModal = true //show the modal
                 }) {
                     Text("Forgot Password?")
                         .font(.footnote)
                         .foregroundColor(.blue)
+                }
+                .sheet(isPresented: $showForgotPasswordModal) {
+                    ForgotPasswordView() //show the forgot password modal
                 }
             }
             .padding(.horizontal)
@@ -79,7 +83,7 @@ struct LoginView: View {
                     .frame(maxWidth: .infinity)
                     .background(Color.black)
                     .foregroundColor(.white)
-                    .cornerRadius(25)
+                    .cornerRadius(10)
                     .padding(.horizontal)
             }
             
@@ -100,7 +104,7 @@ struct LoginView: View {
                     .frame(maxWidth: .infinity)
                     .padding()
                     .background(Color.gray.opacity(0.2))
-                    .cornerRadius(25)
+                    .cornerRadius(10)
                 }
                 
                 Button(action: {
@@ -113,7 +117,7 @@ struct LoginView: View {
                     .frame(maxWidth: .infinity)
                     .padding()
                     .background(Color.gray.opacity(0.2))
-                    .cornerRadius(25)
+                    .cornerRadius(10)
                 }
             }
             .padding(.horizontal)

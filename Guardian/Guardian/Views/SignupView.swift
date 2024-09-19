@@ -32,7 +32,7 @@ struct SignupView: View {
             }
             .padding()
             .background(Color(.secondarySystemBackground))
-            .cornerRadius(25)
+            .cornerRadius(10)
             
             // Last Name Field
             HStack {
@@ -42,7 +42,7 @@ struct SignupView: View {
             }
             .padding()
             .background(Color(.secondarySystemBackground))
-            .cornerRadius(25)
+            .cornerRadius(10)
             
             // Phone Field
             HStack {
@@ -53,7 +53,7 @@ struct SignupView: View {
             }
             .padding()
             .background(Color(.secondarySystemBackground))
-            .cornerRadius(25)
+            .cornerRadius(10)
             
             // Email Field
             HStack {
@@ -64,7 +64,7 @@ struct SignupView: View {
             }
             .padding()
             .background(Color(.secondarySystemBackground))
-            .cornerRadius(25)
+            .cornerRadius(10)
             
             // Password Field with Eye Icon
             HStack {
@@ -85,7 +85,7 @@ struct SignupView: View {
             }
             .padding()
             .background(Color(.secondarySystemBackground))
-            .cornerRadius(25)
+            .cornerRadius(10)
             
             // Sign Up Button
             Button(action: {
@@ -98,7 +98,7 @@ struct SignupView: View {
                     .frame(maxWidth: .infinity)
                     .background(Color.black)
                     .foregroundColor(.white)
-                    .cornerRadius(25)
+                    .cornerRadius(10)
                     .padding(.horizontal)
             }
             // Or signup with
@@ -118,7 +118,7 @@ struct SignupView: View {
                     .frame(maxWidth: .infinity)
                     .padding()
                     .background(Color.gray.opacity(0.2))
-                    .cornerRadius(25)
+                    .cornerRadius(10)
                 }
                 
                 Button(action: {
@@ -131,7 +131,7 @@ struct SignupView: View {
                     .frame(maxWidth: .infinity)
                     .padding()
                     .background(Color.gray.opacity(0.2))
-                    .cornerRadius(25)
+                    .cornerRadius(10)
                 }
             }
             .padding(.horizontal)
