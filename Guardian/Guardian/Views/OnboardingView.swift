@@ -4,7 +4,6 @@
 //
 //  Created by Pravin Jayasinghe on 20/9/2024.
 //
-
 import SwiftUI
 
 struct OnboardingView: View {
@@ -39,7 +38,7 @@ struct OnboardingView: View {
                             .font(.headline)
                             .padding()
                             .frame(maxWidth: .infinity)
-                            .background(Color(.systemBlue))
+                            .background(Color.accentColor)
                             .foregroundColor(.white)
                             .cornerRadius(10)
                             .padding(.horizontal, 20)
@@ -50,7 +49,7 @@ struct OnboardingView: View {
                             .font(.headline)
                             .padding()
                             .frame(maxWidth: .infinity)
-                            .background(Color(.systemGray4))
+                            .background(Color(.systemGray6))
                             .foregroundColor(Color.primary)
                             .cornerRadius(10)
                             .padding(.horizontal, 20)
@@ -60,6 +59,7 @@ struct OnboardingView: View {
                 Spacer()
             }
             .padding()
+            .background(Color(.systemBackground))
         }
     }
 }

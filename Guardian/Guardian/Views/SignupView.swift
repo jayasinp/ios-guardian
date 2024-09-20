@@ -23,6 +23,7 @@ struct SignupView: View {
                 .font(.largeTitle)
                 .fontWeight(.bold)
                 .padding(.bottom, 20)
+                .foregroundColor(Color.primary)
             
             // First Name Field
             HStack {
@@ -37,7 +38,7 @@ struct SignupView: View {
             // Last Name Field
             HStack {
                 Image(systemName: "person.fill")
-                    .foregroundColor(.gray)
+                    .foregroundColor(.secondary)
                 TextField("Last Name", text: $lastName)
             }
             .padding()
@@ -47,7 +48,7 @@ struct SignupView: View {
             // Phone Field
             HStack {
                 Image(systemName: "phone.fill")
-                    .foregroundColor(.gray)
+                    .foregroundColor(.secondary)
                 TextField("Phone Number", text: $phone)
                     .keyboardType(.phonePad)
             }
@@ -58,7 +59,7 @@ struct SignupView: View {
             // Email Field
             HStack {
                 Image(systemName: "envelope.fill")
-                    .foregroundColor(.gray)
+                    .foregroundColor(.secondary)
                 TextField("Email", text: $email)
                     .keyboardType(.emailAddress)
             }
@@ -69,7 +70,7 @@ struct SignupView: View {
             // Password Field with Eye Icon
             HStack {
                 Image(systemName: "lock.fill")
-                    .foregroundColor(.gray)
+                    .foregroundColor(.secondary)
                 if showPassword {
                     TextField("Password", text: $password)
                 } else {
@@ -80,7 +81,7 @@ struct SignupView: View {
                     showPassword.toggle()
                 }) {
                     Image(systemName: showPassword ? "eye.slash.fill" : "eye.fill")
-                        .foregroundColor(.gray)
+                        .foregroundColor(.secondary)
                 }
             }
             .padding()
@@ -96,7 +97,7 @@ struct SignupView: View {
                     .font(.headline)
                     .padding()
                     .frame(maxWidth: .infinity)
-                    .background(Color.black)
+                    .background(Color.accentColor)
                     .foregroundColor(.white)
                     .cornerRadius(10)
                     .padding(.horizontal)
@@ -104,7 +105,7 @@ struct SignupView: View {
             // Or signup with
             Text("or sign up with")
                 .font(.footnote)
-                .foregroundColor(.gray)
+                .foregroundColor(.secondary)
             
             // Google and Apple Login Buttons
             HStack(spacing: 20) {
@@ -117,7 +118,7 @@ struct SignupView: View {
                     }
                     .frame(maxWidth: .infinity)
                     .padding()
-                    .background(Color.gray.opacity(0.2))
+                    .background(Color(.systemGray6))
                     .cornerRadius(10)
                 }
                 
@@ -126,11 +127,13 @@ struct SignupView: View {
                 }) {
                     HStack {
                         Image(systemName: "applelogo")
+                            .foregroundColor(Color.white)
                         Text("Apple")
+                            .foregroundColor(Color.white)
                     }
                     .frame(maxWidth: .infinity)
                     .padding()
-                    .background(Color.gray.opacity(0.2))
+                    .background(Color(.black))
                     .cornerRadius(10)
                 }
             }
@@ -152,5 +155,6 @@ struct SignupView: View {
             Spacer()
         }
         .padding()
+        .background(Color(.systemBackground))
     }
 }

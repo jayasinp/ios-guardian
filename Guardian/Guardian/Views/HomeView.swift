@@ -8,30 +8,34 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        TabView {
-            DashboardView()
-                .tabItem {
-                    Image(systemName: "house.fill")
-                    Text("Dashboard")
-                }
+        VStack {
+            TopBarView() // Stays static at all times at the top of all tabs
             
-            CardsView()
-                .tabItem {
-                    Image(systemName: "creditcard.fill")
-                    Text("Cards")
-                }
-            
-            TransactionsView()
-                .tabItem {
-                    Image(systemName: "list.bullet")
-                    Text("Transactions")
-                }
-            
-            SettingsView()
-                .tabItem {
-                    Image(systemName: "gear")
-                    Text("Settings")
-                }
+            TabView { // Switches between views
+                DashboardView()
+                    .tabItem {
+                        Image(systemName: "house.fill")
+                        Text("Dashboard")
+                    }
+                
+                CardsView()
+                    .tabItem {
+                        Image(systemName: "creditcard.fill")
+                        Text("Cards")
+                    }
+                
+                TransactionsView()
+                    .tabItem {
+                        Image(systemName: "list.bullet")
+                        Text("Transactions")
+                    }
+                
+                SettingsView()
+                    .tabItem {
+                        Image(systemName: "gear")
+                        Text("Settings")
+                    }
+            }
         }
     }
 }

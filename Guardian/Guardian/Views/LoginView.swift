@@ -22,11 +22,12 @@ struct LoginView: View {
                 .fontWeight(.bold)
                 .padding(.bottom, 20)
                 .multilineTextAlignment(.center)
+                .foregroundColor(Color.primary)
             
             // Email Field with Icon
             HStack {
                 Image(systemName: "envelope.fill")
-                    .foregroundColor(.gray)
+                    .foregroundColor(.secondary)
                 TextField("Enter your email", text: $email)
                     .keyboardType(.emailAddress)
                     
@@ -38,7 +39,7 @@ struct LoginView: View {
             // Password Field with Eye Icon
             HStack {
                 Image(systemName: "lock.fill")
-                    .foregroundColor(.gray)
+                    .foregroundColor(.secondary)
                 if showPassword {
                     TextField("Enter your password", text: $password)
                 } else {
@@ -64,7 +65,7 @@ struct LoginView: View {
                 }) {
                     Text("Forgot Password?")
                         .font(.footnote)
-                        .foregroundColor(.blue)
+                        .foregroundColor(.accentColor)
                 }
                 .sheet(isPresented: $showForgotPasswordModal) {
                     ForgotPasswordView() //show the forgot password modal
@@ -81,7 +82,7 @@ struct LoginView: View {
                     .font(.headline)
                     .padding()
                     .frame(maxWidth: .infinity)
-                    .background(Color.black)
+                    .background(Color.accentColor)
                     .foregroundColor(.white)
                     .cornerRadius(10)
                     .padding(.horizontal)
@@ -90,7 +91,7 @@ struct LoginView: View {
             // Or continue with
             Text("or continue with")
                 .font(.footnote)
-                .foregroundColor(.gray)
+                .foregroundColor(.secondary)
             
             // Google and Apple Login Buttons
             HStack(spacing: 20) {
@@ -103,7 +104,7 @@ struct LoginView: View {
                     }
                     .frame(maxWidth: .infinity)
                     .padding()
-                    .background(Color.gray.opacity(0.2))
+                    .background(Color(.systemGray6))
                     .cornerRadius(10)
                 }
                 
@@ -112,11 +113,13 @@ struct LoginView: View {
                 }) {
                     HStack {
                         Image(systemName: "applelogo")
+                            .foregroundColor(Color.white)
                         Text("Apple")
+                            .foregroundColor(Color.white)
                     }
                     .frame(maxWidth: .infinity)
                     .padding()
-                    .background(Color.gray.opacity(0.2))
+                    .background(Color(.black))
                     .cornerRadius(10)
                 }
             }
@@ -127,7 +130,7 @@ struct LoginView: View {
             // Sign up link
             HStack {
                 Text("Don't have an account?")
-                    .foregroundColor(.gray)
+                    .foregroundColor(.secondary)
                 
                 NavigationLink(destination: SignupView(isLoggedIn: $isLoggedIn)) {
                     Text("Sign up")
@@ -138,5 +141,6 @@ struct LoginView: View {
             .padding(.bottom)
         }
         .padding()
+        .background(Color(.systemBackground))
     }
 }
